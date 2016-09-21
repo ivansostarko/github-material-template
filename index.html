@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GitHubPageApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Github material template</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="dist/styles/base.min.css">
+</head>
+
+
+<body layout="row" ng-controller="AppCtrl">
+
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-toolbar class="md-hue-2">
+        <span flex></span>
+        <div layout="row" layout-align="start center">
+            <img src="{{user.avatar_url}}" class="md-avatar"/>
+            <span flex></span>
+        </div>
+        <span flex></span>
+        <div class="md-body-2">{{ user.login }}</div>
+        <div class="md-body-1">{{ user.email }}</div>
+
+        <span flex></span>
+
+
+    </md-toolbar>
+
+    <md-menu-content>
+        <md-menu-item ng-show="user.company">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <ng-md-icon icon="assignment_ind"></ng-md-icon>
+                </div>
+                <div class="inset">{{user.company}}</div>
+            </md-item-content>
+        </md-menu-item>
+        <md-divider></md-divider>
+
+        <md-menu-item ng-show="user.blog">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <ng-md-icon icon="rss_feed"></ng-md-icon>
+                </div>
+                <div class="inset"><a href="{{user.blog}}">{{user.blog}}</a></div>
+            </md-item-content>
+        </md-menu-item>
+        <md-divider></md-divider>
+
+        <md-menu-item ng-show="user.location">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <ng-md-icon icon="location_on"></ng-md-icon>
+                </div>
+                <div class="inset">{{user.location}}</div>
+            </md-item-content>
+        </md-menu-item>
+
+        <md-divider></md-divider>
+
+        <md-menu-item>
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <ng-md-icon icon="star_border"></ng-md-icon>
+                </div>
+                <div class="inset">Followers:</div>
+                <div class="inset">{{user.followers}}
+                </div>
+            </md-item-content>
+        </md-menu-item>
+
+        <md-divider></md-divider>
+        <md-menu-item>
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <ng-md-icon icon="star"></ng-md-icon>
+                </div>
+                <div class="inset">Following:</div>
+                <div class="inset">{{user.following}}
+                </div>
+            </md-item-content>
+        </md-menu-item>
+
+        <md-divider></md-divider>
+        <md-menu-item ng-show="user.public_repos">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <ng-md-icon icon="share"></ng-md-icon>
+                </div>
+                <div class="inset">Public repositories:</div>
+                <div class="inset">{{user.public_repos}}
+                </div>
+            </md-item-content>
+        </md-menu-item>
+    </md-menu-content>
+
+</md-sidenav>
+
+<div layout="column" class="relative" layout-fill role="main">
+
+    <md-toolbar class="md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+                <ng-md-icon icon="menu" style="fill:white"></ng-md-icon>
+            </md-button>
+            <h3>
+                Github material template
+            </h3>
+        </div>
+    </md-toolbar>
+
+
+    <md-content flex>
+        <ui-view layout="column" layout-fill layout-padding>
+            <div class="inset" hide-sm></div>
+
+            <div flex-gt-sm="90" flex-gt-md="80" ng-show="user.bio">
+                <h2 class="md-title inset">About me</h2>
+                <md-card>
+                    <md-list>
+                        <md-list-item>
+                            {{ user.bio}}
+                        </md-list-item>
+                    </md-list>
+                </md-card>
+            </div>
+
+
+            <div flex-gt-sm="90" flex-gt-md="80">
+                <h2 class="md-title inset">Public repositories</h2>
+                <md-card ng-repeat="repository in repositories">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <md-list>
+                                <md-list-item>
+                                    <a href="{{ repository.html_url}}"><h2>{{ repository.name}}</h2></a>
+                                </md-list-item>
+                            </md-list>
+                        </md-card-title-text>
+                    </md-card-title>
+
+                    <md-card-content>
+                        <md-divider ng-if="!$last"></md-divider>
+                        <p>
+                            {{ repository.description}}
+                        </p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="start center">
+                        <md-button class="md-raised md-primary">{{ repository.language}}</md-button>
+                        <md-button class="md-raised md-primary"> Stars: {{ repository.stargazers_count}}</md-button>
+                        <md-button class="md-raised md-primary">Forks:{{repository.forks }}</md-button>
+                        <md-button class="md-raised md-primary">Watchers: {{repository.watchers_count}}</md-button>
+                        <md-button class="md-raised md-warn">Open issues:{{ repository.open_issues}}</md-button>
+                    </md-card-actions>
+
+                </md-card>
+            </div>
+        </ui-view>
+    </md-content>
+</div>
+
+
+<!-- Angular Material Dependencies -->
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="node_modules/angular-aria/angular-aria.min.js"></script>
+
+<!-- Angular Material -->
+<script src="node_modules/angular-material/angular-material.min.js"></script>
+<script src="node_modules/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="dist/scripts/main.js"></script>
+</body>
+</html>
+
+
+
