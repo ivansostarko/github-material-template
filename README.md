@@ -7,7 +7,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/IvanSostarko/ivy-theme/blob/master/LICENSE)
 
 ## Demo
-![](https://raw.githubusercontent.com/IvanSostarko/ivy-theme/master/src/images/screenshoot.jpg)
+![](https://raw.githubusercontent.com/IvanSostarko/github-material-template/master/src/images/screenshoot.jpg)
 
 #### Check online demo:  [https://ivansostarko.github.io//](https://ivansostarko.github.io/)
 
@@ -21,30 +21,9 @@ Make sure these are installed first.
 
 ### Clone repository
 ```sh
-git clone https://github.com/IvanSostarko/ivy-theme.git
+git clone https://github.com/IvanSostarko/github-material-template.git
 ```
 
-### Quick Start
-
-1. In bash/terminal/command line, `cd` into your project directory.
-2. Run `npm install` to install required files.
-3. When it's done installing, run one of the task runners to get going:
-	* `gulp` manually compiles files and runs unit tests.
-	* `gulp watch` automatically compiles files, runs unit tests, and applies changes using [LiveReload](http://livereload.com/).
-	* `gulp test` compiles files and runs unit tests.
-	
-## Pages
-
-- Homepage (About me, Featured works, Latest posts, Contact)
-- Bootstrap components (Forms, Buttons & Icons, Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars...)
-- Blog
-- Blog Single
-- Portfolio
-- Portfolio Single
-- CV 
-- Password page
-- Price Estimate page
-- Errors pages
 
 ## Contributing
 #### Bug Reports & Feature Requests
