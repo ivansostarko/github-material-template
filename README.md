@@ -1,6 +1,5 @@
 # GitHub Page Material Template
-> Simple personal theme built with Bootstrap.
-> Free for both personal and commercial use.
+> Simple GitHub page template based on Angular Material.
 
 [![Build Status](https://travis-ci.org/IvanSostarko/ivy-theme.svg?branch=master)](https://travis-ci.org/IvanSostarko/ivy-theme)
 [![Code Climate](https://codeclimate.com/github/IvanSostarko/ivy-theme/badges/gpa.svg)](https://codeclimate.com/github/IvanSostarko/ivy-theme)
@@ -10,7 +9,7 @@
 ## Demo
 ![](https://raw.githubusercontent.com/IvanSostarko/ivy-theme/master/src/images/screenshoot.jpg)
 
-#### Check online demo:  [http://demo.ivan-sostarko.com/ivy-theme/](http://demo.ivan-sostarko.com/ivy-theme/)
+#### Check online demo:  [https://ivansostarko.github.io//](https://ivansostarko.github.io/)
 
 ## Getting Started
 
