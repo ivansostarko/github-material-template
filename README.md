@@ -1,4 +1,6 @@
 # GitHub Page Material Template
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/IvanSostarko/github-material-template.svg)](https://greenkeeper.io/)
 > Simple GitHub page template based on Angular Material.
 
 [![Build Status](https://travis-ci.org/IvanSostarko/ivy-theme.svg?branch=master)](https://travis-ci.org/IvanSostarko/ivy-theme)
